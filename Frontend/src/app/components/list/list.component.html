@@ -1,0 +1,29 @@
+<div class="m-5">
+  <div class="card">
+    <div class="card-body">
+      <div class="card-header">
+        <button type="button" class="btn btn-primary" (click)="createContact()">Nuevo contacto</button>
+      </div>
+      <table class="table table-secondary table-hover">
+        <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Teléfono</th>
+          <th scope="col">Fecha de nacimiento</th>
+          <th scope="col">Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let cont of allContacts" (click)="updateContact(cont.id)">
+          <th scope="row"> {{cont.id}} </th>
+          <td>{{cont.namePerson}}</td>
+          <td>{{cont.phone}}</td>
+          <td>{{cont.dateBirth | date}}</td>
+          <td>{{cont.email}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

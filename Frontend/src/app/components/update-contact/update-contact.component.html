@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="card-title"><h3>Actualizar contacto:</h3></div>
+  <form [formGroup]="updateForm" (ngSubmit)="submitUpdateForm(updateForm.value)">
+    <div class="form-group">
+      <label>Nombre:</label>
+      <input type="text" class="form-control" placeholder="Nombre del contacto" formControlName="NamePerson">
+      <label>Teléfono:</label>
+      <input type="text" class="form-control" placeholder="Telefono" formControlName="phone">
+    </div>
+    <div class="form-group row">
+      <div class="col">
+        <label>Fecha de nacimiento:</label>
+        <input type="text" class="form-control" placeholder="Año-Mes-Día" formControlName="dateOfBirth">
+      </div>
+      <div class="col">
+        <label>Email:</label>
+        <input type="text" class="form-control" placeholder="Email" formControlName="email">
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <button type="button" class="btn btn-danger" (click)="hardDelete()">Eliminar</button>
+    <button type="button" class="btn btn-dark" (click)="goBack()">Volver</button>
+  </form>
+</div>
