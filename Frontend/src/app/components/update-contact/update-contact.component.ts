@@ -22,7 +22,7 @@ export class UpdateContactComponent implements OnInit {
   updateForm = new FormGroup({
     namePerson: new FormControl(''),
     phone: new FormControl(''),
-    dateOfBirth: new FormControl(''),
+    dateBirth: new FormControl(''),
     email: new FormControl(''),
 
   });
@@ -32,7 +32,7 @@ export class UpdateContactComponent implements OnInit {
     this.api.getSingleContact(contactId).subscribe(data => {
       console.log(data)
       this.updateForm.setValue({
-        'NamePerson': data.namePerson,
+        'namePerson': data.namePerson,
         'phone': data.phone,
         'dateBirth': data.dateBirth,
         'email': data.email,

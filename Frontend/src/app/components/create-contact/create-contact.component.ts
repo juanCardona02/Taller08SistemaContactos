@@ -11,9 +11,9 @@ import {ApiService} from "../../services/api/api.service";
 })
 export class CreateContactComponent implements OnInit {
   newContactForm = new FormGroup({
-    firstName: new FormControl(''),
-    lastName: new FormControl(''),
-    dateOfBirth: new FormControl(''),
+    namePerson: new FormControl(''),
+    phone: new FormControl(''),
+    dateBirth: new FormControl(''),
     email: new FormControl(''),
   });
 
@@ -25,10 +25,10 @@ export class CreateContactComponent implements OnInit {
   ngOnInit(): void {
     this.api.postContact(
       {
-        firstName: "j",
-        lastName: "j",
+        namePerson: "j",
+        phone: "j",
         email: "j@j.com",
-        dateOfBirth: "2000-02-02"
+        dateBirth: "2000-02-02"
       }
     ).subscribe(data => console.log(data))
   }
